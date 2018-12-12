@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{text}}
+  <m-button>nio</m-button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="../dist/index.js"></script>
+<script>
+  console.log(MyComponent);
+  const {MButton} = MyComponent;
+  const app = new Vue({
+    el:'#app',
+    data:{
+      text: 'hello vue!',
+    },
+    components:{
+      'm-button':MButton,
+    }
+  })
+</script>
+</body>
+</html>
