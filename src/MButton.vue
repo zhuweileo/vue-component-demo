@@ -1,10 +1,16 @@
 <template>
-  <button class="my-button" @click="onClick"><slot></slot></button>
+  <button class="my-button" :class="type" @click="onClick"><slot></slot></button>
 </template>
 
 <script>
   export default {
     name: "MButton",
+    props:{
+      type: {
+        type: String,
+        default: '',
+      },
+    },
     methods:{
       onClick(e){
         this.$emit('click',e)
@@ -28,5 +34,14 @@
   }
   .my-button:active{
     background: #ccc;
+  }
+  .warn{
+    background: #ff4348;
+  }
+  .warn:hover{
+    background: #ff9e9e;
+  }
+  .warn:active{
+    background: #ff4348;
   }
 </style>
